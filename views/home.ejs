@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/operations.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      function getMyInfo()
+      {
+        return "<%=uid%>"
+      }
+      </script>
+  </head>
+<body onload="check()">
+    <div class="topnav" id="myTopnav" style="margin-bottom:0px;">
+        <a href="/home" class="active">Home</a>
+        <a href="/visual">Analysis</a>
+        <a href="/support">support</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </div>
+      <div  class="conatiner m-3" style="padding-left:16px;background-color: rgb(27, 143, 127); margin:0%;margin-top:2px;padding:10px; margin-right:5px;border-radius: 8px;">
+        <!--The 1st inner division-->
+        <div class="container" style="background-color: rgb(255, 255, 255);position: relative;margin: auto;border: 1px solid black;border-radius: 8px;">
+            <center>
+              <h3>Upload data</h3>
+            </center>
+            <!--Form for submission of CSV data-->
+            <div class="mb-3" style="display:none;">
+                <label for="formFile" class="form-label">Upload data</label>
+                <input class="form-control" type="file" id="formFile" onchange="doUpload()">
+            </div>
+
+            <!--actual upload division-->
+            <div class="row m-1">
+              <div class="col-2">
+
+                <icon class="fa fa-paperclip fa-2x" style="float: right;cursor: pointer;" onclick="perform()"></icon>
+              
+              </div>
+              <div class="col-8" style="text-align: center;border: 1px solid black;">
+                File_name
+              </div>
+              <div class="col-2">
+                <icon class="fa fa-upload fa-2x" style="float: left;"></icon>
+              </div>
+        
+            </div>
+            
+        </div>
+
+      </div>
+
+      <!--Visual display-->
+
+      <div class="my-row m-3" style="background-color: rgb(81, 225, 129); border-radius: 8px;text-align: center;overflow-x: hidden;">
+        <center>  
+        <h3 id="status" style="COLOR:white;font-family: cursive;">Your forecast</h3>
+        </center>
+        <div class="row m-3"> 
+            <div class="col-sm-6">
+              <div class="mb-2" id="myPlot" ></div>
+            </div>
+            <div class="col-sm-6" >
+              <div class="mb-2" id="myPlot1" ></div>
+            </div>
+        </div>
+      </div>
+
+
+      
+
+
+</body>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</html>
