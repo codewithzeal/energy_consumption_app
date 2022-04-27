@@ -6,10 +6,10 @@ var log={
     
     var config=
     {
-        host:"tarpdb.c0tmgbl6t2tm.ap-south-1.rds.amazonaws.com" ,    
+        host:"" ,    
 	    port:"3306",
-        user: 'naman',
-        password: 'inaman123',
+        user: '',
+        password: '',
         database: 'tarp'
     }
     const db=mysql.createConnection(config);
